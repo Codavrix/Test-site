@@ -103,3 +103,18 @@ body{
  .nav{background:#0c3526f2;border-color:#347b58;box-shadow:0 15px 35px #0008}
  .band-inner{color:#e8fff0}
 }
+
+
+/* 3D Omnivex emerald coin */
+.coin-stage{perspective:1100px;isolation:isolate}
+.coin-orbit{position:absolute;width:340px;height:340px;border:1px solid #2e8057;border-radius:50%;box-shadow:0 0 0 34px #1a6a4438,0 0 0 68px #1a6a4420}
+.brand-coin{position:relative;width:238px;height:238px;transform-style:preserve-3d;animation:omnivex-coin-spin 7s linear infinite;filter:drop-shadow(0 24px 26px #0008)}
+.coin-face{position:absolute;inset:0;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;color:#061b12;background:radial-gradient(circle at 34% 24%,#a5ffc9 0,#43e68d 25%,#16b96a 62%,#087a45 100%);border:9px solid #24d982;box-shadow:inset 0 0 0 3px #0a7d49,inset 0 0 0 8px #75f4a7,inset 0 12px 22px #ffffff50,inset 0 -18px 25px #00552e55}
+.coin-face:before{content:"";position:absolute;inset:12px;border:1px solid #075b36;border-radius:50%;opacity:.55}
+.coin-front:after,.coin-back:after{content:"";position:absolute;width:145%;height:35%;top:10%;left:-20%;transform:rotate(-28deg);background:linear-gradient(180deg,#ffffff50,#ffffff00);pointer-events:none}
+.coin-back{transform:rotateY(180deg)}
+.coin-name{font:800 25px/1 var(--font);letter-spacing:.04em;z-index:1;text-shadow:0 1px #b8ffd2}
+.coin-sub{font:800 8px/1 var(--body);letter-spacing:.28em;z-index:1;color:#064b2c}
+@keyframes omnivex-coin-spin{from{transform:rotateY(0deg) rotateX(-8deg)}to{transform:rotateY(360deg) rotateX(-8deg)}}
+@media(max-width:760px){.coin-orbit{width:260px;height:260px}.brand-coin{width:190px;height:190px}.coin-name{font-size:21px}}
+@media(prefers-reduced-motion:reduce){.brand-coin{animation:none;transform:rotateY(-18deg)}}
